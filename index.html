@@ -12,7 +12,7 @@
 				<i class="bi bi-headphones"></i>
 				<span style="margin-left: 5px;">Call us today for assistance: +254702756444</span>
 			</a>
-		</div>
+		</div>		
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -45,10 +45,75 @@
 										</ul>
 									</div>
 									<span class="image object">
-										<img src="assets\images\flowerbox.jpg" alt="" />
+										<div class="slideshow-container">
+											<div class="mySlides fade">
+												<div class="numbertext">1/12</div>
+												<img src="assets\images\valentinebanner.jpg" alt="" />
+												<div class="text">Caption Text</div>
+											</div>
+											<div class="mySlides fade">
+												<div class="numbertext">2/12</div>
+												<img src="assets\images\flowerbox.jpg" alt="" />
+												<div class="text">Caption Text</div>
+											</div>
+											<div class="mySlides fade">
+												<div class="numbertext">3/12</div>
+												<img src="assets\images\NAD_0672.JPG" alt="" />
+												<div class="text">Caption Text</div>
+											</div>
+											<div class="mySlides fade">
+												<div class="numbertext">4/12</div>
+												<img src="assets\images\NAD_0533.JPG" alt="" />
+												<div class="text">VALENTINES GIFT PACKS</div>
+											</div>
+											<div class="mySlides fade">
+												<div class="numbertext">5/12</div>
+												<img src="assets\images\NAD_0535.JPG" alt="" />
+												<div class="text">Caption Text</div>
+											</div>
+											<div class="mySlides fade">
+												<div class="numbertext">6/12</div>
+												<img src="assets\images\NAD_0556.JPG" alt="" />
+												<div class="text">Caption Text</div>
+											</div>
+
+											<div class="mySlides fade">
+												<div class="numbertext">7/12</div>
+												<img src="assets\images\NAD_0562.JPG" alt="" />
+												<div class="text">Caption Text</div>
+											</div>
+											<div class="mySlides fade">
+												<div class="numbertext">8/12</div>
+												<img src="assets\images\NAD_0564.JPG" alt="" />
+												<div class="text">Caption Text</div>
+											</div>
+											<div class="mySlides fade">
+												<div class="numbertext">9/12</div>
+												<img src="assets\images\NAD_0588.JPG" alt="" />
+												<div class="text">Caption Text</div>
+											</div>
+											<div class="mySlides fade">
+												<div class="numbertext">10/12</div>
+												<img src="assets\images\NAD_0604.JPG" alt="" />
+												<div class="text">Caption Text</div>
+											</div>
+											<div class="mySlides fade">
+												<div class="numbertext">11/12</div>
+												<img src="assets\images\NAD_0610.JPG" alt="" />
+												<div class="text">Caption Text</div>
+											</div>
+											<div class="mySlides fade">
+												<div class="numbertext">12/12</div>
+												<img src="assets\images\NAD_0643.JPG" alt="" />
+												<div class="text">Caption Text</div>
+											</div>
+
+											<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+											<a class="next" onclick="plusSlides(1)">&#10095;</a>
+										</div>
+										
 									</span>
 								</section>
-
 							<!-- Section -->
 								<section>
 									<header class="major">
@@ -176,7 +241,7 @@
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy; E&E Gift World. All rights reserved.<a href="https://unsplash.com">Developer</a>. Jimkiumi <a href="https://html5up.net">Tech Services</a>.</p>
+									<p class="copyright">2024 &copy; E&E Gift World. All rights reserved.<a href="https://unsplash.com">Developer</a>. Jimkiumi <a href="https://html5up.net">Tech Services</a>.</p>
 								</footer>
 
 						</div>
@@ -190,6 +255,51 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var slideIndex = 1;
+				showSlides(slideIndex);
 
+				function plusSlides(n) {
+					showSlides(slideIndex += n);
+				}
+
+				function currentSlides(n) {
+					showSlides(slideIndex = n);
+				}
+
+				function showSlides(n) {
+					var i;
+					var slides = document.getElementsByClassName("mySlides");
+					var dots = document.getElementsByClassName("dot");
+					if (n > slides.length) { slideIndex = 1}
+					if (n < 1) {slideIndex = slides.length}
+					for ( i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
+					}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex - 1].style.display = "block";
+					dots[slideIndex - 1].className += " active";
+				}
+
+				// auto slide
+				var slideIndex = 0;
+				showSlides();
+
+				function showSlides() {
+					var i;
+					var slides = document.getElementsByClassName("mySlides");
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
+					}
+					slideIndex++;
+					if (slideIndex > slides.length) {
+						slideIndex = 1
+					}
+					slides[slideIndex - 1].style.display = "block";
+					setTimeout(showSlides, 2000);
+				}
+			</script>
 	</body>
 </html>
